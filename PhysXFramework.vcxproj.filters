@@ -41,6 +41,9 @@
     <Filter Include="GameFiles\Scenes\W01_PhysX">
       <UniqueIdentifier>{7b6973a1-1950-42b0-81c0-1a6769dc80c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFiles\Scenes\W02_PhysXMeshes">
+      <UniqueIdentifier>{2ed2bc44-25a6-4bc2-b10e-c65779e37bd1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -190,6 +193,12 @@
     <ClInclude Include="WallDemolitionScene.h">
       <Filter>GameFiles\Scenes\W01_PhysX</Filter>
     </ClInclude>
+    <ClInclude Include="PhysXMeshTestScene.h">
+      <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioTestScene.h">
+      <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -320,6 +329,12 @@
     </ClCompile>
     <ClCompile Include="WallDemolitionScene.cpp">
       <Filter>GameFiles\Scenes\W01_PhysX</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysXMeshTestScene.cpp">
+      <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioTestScene.cpp">
+      <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

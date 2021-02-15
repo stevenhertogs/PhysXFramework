@@ -74,6 +74,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AudioTestScene.h" />
     <ClInclude Include="BaseCamera.h" />
     <ClInclude Include="BinaryReader.h" />
     <ClInclude Include="BouncingBallsScene.h" />
@@ -107,6 +108,7 @@
     <ClInclude Include="PhysxErrorCallback.h" />
     <ClInclude Include="PhysxHelpers.h" />
     <ClInclude Include="PhysxManager.h" />
+    <ClInclude Include="PhysXMeshTestScene.h" />
     <ClInclude Include="PhysXTestScene.h" />
     <ClInclude Include="PxConvexMeshLoader.h" />
     <ClInclude Include="PxTriangleMeshLoader.h" />
@@ -125,6 +127,7 @@
     <ClInclude Include="WallDemolitionScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AudioTestScene.cpp" />
     <ClCompile Include="BaseCamera.cpp" />
     <ClCompile Include="BinaryReader.cpp" />
     <ClCompile Include="BouncingBallsScene.cpp" />
@@ -155,6 +158,7 @@
     <ClCompile Include="MeshObjectTex.cpp" />
     <ClCompile Include="PhysxErrorCallback.cpp" />
     <ClCompile Include="PhysxManager.cpp" />
+    <ClCompile Include="PhysXMeshTestScene.cpp" />
     <ClCompile Include="PhysXTestScene.cpp" />
     <ClCompile Include="PxConvexMeshLoader.cpp" />
     <ClCompile Include="PxTriangleMeshLoader.cpp" />

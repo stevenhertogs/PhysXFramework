@@ -12,7 +12,6 @@ using namespace FMOD;
 AudioTestScene::AudioTestScene()
 	: GameScene(L"AudioTestScene")
 	, m_Volume(1.f)
-	, m_pSphere(nullptr)
 	, m_LastCamPos(FMOD_VECTOR())
 	, m_pChannel3D(nullptr)
 	, m_pChannel{}
@@ -32,10 +31,7 @@ void AudioTestScene::Initialize()
 	EnablePhysxDebugRendering(true);
 
 	// sound source made visible
-	const float radius{ 1.0f };
-	const int slices{ 10 }, stacks{ 10 };
-	m_pSphere = new SpherePosColorNorm(radius, slices, stacks, XMFLOAT4{ 1,0,0,1 });
-	AddGameObject( m_pSphere);
+	
 
 	//GROUND PLANE
 	auto groundPlaneActor = physX->createRigidStatic(PxTransform::createIdentity());
@@ -56,7 +52,7 @@ void AudioTestScene::Initialize()
 
 	//3D SOUND
 	FMOD::Sound *p3DSound;
-	fmodResult = pFmodSystem->createStream("Sounds/drumloop.wav", FMOD_3D|FMOD_3D_LINEARROLLOFF, 0, &p3DSound);
+	fmodResult = pFmodSystem->createStream("Sounds/Thrones.mp3", FMOD_3D|FMOD_3D_LINEARROLLOFF, 0, &p3DSound);
 	SoundManager::GetInstance()->ErrorCheck(fmodResult);
 
 	fmodResult = p3DSound->setMode(FMOD_LOOP_NORMAL);
@@ -69,10 +65,10 @@ void AudioTestScene::Initialize()
 	SoundManager::GetInstance()->ErrorCheck(fmodResult);
 
 	//Actions
-	m_pSceneContext->GetInput()->AddInputAction(InputAction(InputIds::Play, InputTriggerState::pressed, VK_SPACE)); //PLAY
-	m_pSceneContext->GetInput()->AddInputAction(InputAction(InputIds::Play3D, InputTriggerState::pressed, 'B'));
-	m_pSceneContext->GetInput()->AddInputAction(InputAction(InputIds::IncreaseVolume, InputTriggerState::down, VK_UP));
-	m_pSceneContext->GetInput()->AddInputAction(InputAction(InputIds::DecreaseVolume, InputTriggerState::down, VK_DOWN));
+	m_pSceneContext->GetInput()->AddInputAction(InputAction((int)InputIds::Play, InputTriggerState::pressed, VK_SPACE)); //PLAY
+	m_pSceneContext->GetInput()->AddInputAction(InputAction((int)InputIds::Play3D, InputTriggerState::pressed, 'B'));
+	m_pSceneContext->GetInput()->AddInputAction(InputAction((int)InputIds::IncreaseVolume, InputTriggerState::down, VK_UP));
+	m_pSceneContext->GetInput()->AddInputAction(InputAction((int)InputIds::DecreaseVolume, InputTriggerState::down, VK_DOWN));
 }
 
 inline FMOD_VECTOR ToFmodVector(DirectX::XMFLOAT3 vec)
@@ -104,7 +100,7 @@ void AudioTestScene::Update()
 	SoundManager::GetInstance()->GetSystem()->set3DListenerAttributes(0, &pos, &vel, &forward, &up);
 
 	//2D SOUND ACTIONS
-	if(m_pSceneContext->GetInput()->IsActionTriggered(InputIds::Play))
+	if(m_pSceneContext->GetInput()->IsActionTriggered((int)InputIds::Play))
 	{
 		bool bPauzed=false;
 		m_pChannel->getPaused(&bPauzed);
@@ -121,7 +117,7 @@ void AudioTestScene::Update()
 	}
 
 	
-	if(m_Volume < 1.f && m_pSceneContext->GetInput()->IsActionTriggered(InputIds::IncreaseVolume))
+	if(m_Volume < 1.f && m_pSceneContext->GetInput()->IsActionTriggered((int)InputIds::IncreaseVolume))
 	{
 		m_Volume += 0.5f * m_pSceneContext->GetGameTime()->GetElapsed();
 		if(m_Volume > 1.f) m_Volume = 1.f;
@@ -130,7 +126,7 @@ void AudioTestScene::Update()
 			
 	}
 
-	if(m_Volume > 0.f && m_pSceneContext->GetInput()->IsActionTriggered(InputIds::DecreaseVolume))
+	if(m_Volume > 0.f && m_pSceneContext->GetInput()->IsActionTriggered((int)InputIds::DecreaseVolume))
 	{
 		m_Volume -= 0.5f * m_pSceneContext->GetGameTime()->GetElapsed();
 		if(m_Volume < 0.f) m_Volume = 0.f;
@@ -139,7 +135,7 @@ void AudioTestScene::Update()
 	}
 
 	//3D SOUND ACTIONS
-	if(m_pSceneContext->GetInput()->IsActionTriggered(InputIds::Play3D))
+	if(m_pSceneContext->GetInput()->IsActionTriggered((int)InputIds::Play3D))
 	{
 		bool bPauzed=false;
 		m_pChannel3D->getPaused(&bPauzed);
