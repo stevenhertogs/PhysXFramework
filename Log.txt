@@ -1,0 +1,7 @@
+[INFO]    Managers Initialized!
+[INFO]    Press 'Page Up' or 'Page Down' to cycle between the different scenes
+[INFO]    Press 'I' to toggle the debug renderer.
+[INFO]    Press 'M' to do physics stepping.
+[INFO]    Press 'L' to stop doing physics stepping.
+[INFO]    Scenes Initialized!
+[INFO]    DebugRenderer::Draw() > Increasing Vertexbuffer Size!
