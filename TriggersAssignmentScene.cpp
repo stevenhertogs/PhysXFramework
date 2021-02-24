@@ -345,5 +345,6 @@ void TriggersAssignmentScene::ResetVelocity(GameObject* object)
 {
 	static_cast<PxRigidDynamic*>(object->GetRigidActor())->setAngularVelocity(PxVec3(0.f, 0.f, 0.f));
 	static_cast<PxRigidDynamic*>(object->GetRigidActor())->setLinearVelocity(PxVec3(0.f, 0.f, 0.f));
+	object->Rotate(0, 0, 0);
 }
 
