@@ -3,5 +3,7 @@
 [INFO]    Press 'I' to toggle the debug renderer.
 [INFO]    Press 'M' to do physics stepping.
 [INFO]    Press 'L' to stop doing physics stepping.
+[INFO]    Parsing mesh: Object
+[INFO]    Parsing mesh: Object
 [INFO]    Scenes Initialized!
 [INFO]    DebugRenderer::Draw() > Increasing Vertexbuffer Size!

@@ -199,6 +199,9 @@
     <ClInclude Include="AudioTestScene.h">
       <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
     </ClInclude>
+    <ClInclude Include="TriggersAssignmentScene.h">
+      <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -334,6 +337,9 @@
       <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
     </ClCompile>
     <ClCompile Include="AudioTestScene.cpp">
+      <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggersAssignmentScene.cpp">
       <Filter>GameFiles\Scenes\W02_PhysXMeshes</Filter>
     </ClCompile>
   </ItemGroup>
